@@ -1,0 +1,70 @@
+#!/usr/bin/python3
+class Users():
+    """Класс пользователей, login, logout, и подсчёт кол-ва входов"""
+    def __init__(self, name, login):
+        """Стандартные параметры пользователя"""
+        self.name = name
+        self.login = login
+        self.login_count = 0 #кол-во входов пользователя по умолчанию
+    def info(self):
+        """Имя и логин пользователей"""
+        site = (self.name + " " + self.login + " " + str(self.login_count))
+        print(site)
+    def logon(self):
+        """Метод, с помощью которого пользователи входят в систему с счётчиком входов"""
+        print(self.name +"("+ self.login + ")" + "Вошел(ла) в систему")
+        self.login_count +=1
+        if self.login_count == 1:
+            print(self.login + " " + "входит в систему первый раз")
+    def log_count(self):
+        """Метод вывода кол-ва входов всех пользователей"""
+        print(self.login + " " + "входил(а) в систему: " + str(self.login_count)+ " раз(а)")
+
+    def logout(self):
+        """Метод, с помощью которого пользователи выходят из системы"""
+        print(self.name +"("+ self.login + ")" + " вышел(ла) из системы")
+
+user1 = Users("Саня", "Sanya123")
+user2 = Users("Вика", "Viktoria88qw")
+user3 = Users("Олег", "GoodWorkOleg228")
+user4 = Users("Никита Ушинский","cosnilex")
+
+
+user1.logon()
+user1.logout()
+print("")
+user2.logon()
+user2.logout()
+print('')
+user3.logon()
+user3.logout()
+print('')
+user3.logon()
+user3.logout()
+print('')
+user1.logon()
+user1.logout()
+user1.logon()
+user1.logout()
+user1.logon()
+user1.logout()
+user1.logon()
+user1.logout()
+user1.logon()
+print('')
+
+user4.logon()
+user4.logout()
+print('')
+
+user2.logon()
+user2.logout()
+user3.logon()
+user3.logout()
+print("")
+print("Информация по входам пользователей сайта за день: ")
+user1.log_count()
+user2.log_count()
+user3.log_count()
+user4.log_count()
+print('')
